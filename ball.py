@@ -2,7 +2,7 @@
 
 import pygame
 from config import BALL_SIZE, BALL_SPEED_X, BALL_SPEED_Y, SCREEN_WIDTH, SCREEN_HEIGHT, LIVES, ball_dict
-
+                                                                                            
 # ======================== PARTIE 1.1 ========================
 # TODO : Charger l'image de la balle et la redimensionner
 # - Utiliser pygame.image.load("chemin/vers/image")
@@ -11,6 +11,13 @@ from config import BALL_SIZE, BALL_SPEED_X, BALL_SPEED_Y, SCREEN_WIDTH, SCREEN_H
 #
 # L'image de la balle se trouve dans le dossier assets/ (ball.png).
 # La taille finale doit correspondre à la constante BALL_SIZE.
+
+
+
+
+
+
+
 
 ball_img = None  # À remplacer par l'image chargée et redimensionnée
 

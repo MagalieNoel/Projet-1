@@ -19,7 +19,6 @@ Le joueur dispose de **3 vies**. Une vie est perdue lorsque la balle touche le b
 > **Contrôles :**
 > - **Flèche gauche / Flèche droite** : déplacer la raquette
 > - **R** : recommencer la partie (après un Game Over ou une victoire)
-
 > **Système de points :** les briques du haut valent plus que celles du bas.
 > La rangée bleue (haut) rapporte **5 points** par brique, et la rangée verte (bas) **1 point**.
 > Les rangées intermédiaires valent 4, 3 et 2 points de haut en bas.

@@ -29,7 +29,7 @@ BRICK_OFFSET_TOP = 80          # distance depuis le haut de l'écran
 BRICK_OFFSET_LEFT = (SCREEN_WIDTH - BRICK_COLS * BRICK_WIDTH - (BRICK_COLS - 1) * BRICK_PADDING) // 2
 
 # Couleurs (une par rangée, du haut vers le bas)
-BRICK_COLORS  = ["blue", "red", "orange", "yellow", "green"]
+BRICK_COLORS  = ["blue","red", "orange", "yellow", "green"]
 # Points accordés par brique (même ordre que BRICK_COLORS)
 BRICK_POINTS  = [5, 4, 3, 2, 1]
 
