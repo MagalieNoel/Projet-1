@@ -11,16 +11,9 @@ from config import BALL_SIZE, BALL_SPEED_X, BALL_SPEED_Y, SCREEN_WIDTH, SCREEN_H
 #
 # L'image de la balle se trouve dans le dossier assets/ (ball.png).
 # La taille finale doit correspondre à la constante BALL_SIZE.
-
-
-
-
-
-
-
-
-ball_img = None  # À remplacer par l'image chargée et redimensionnée
-
+img = pygame.image.load("assets/ball.png")
+ball_img = pygame.transform.scale(img, BALL_SIZE)
+ 
 
 # ======================== PARTIE 1.2 ========================
 # TODO : Initialiser les valeurs dans le dictionnaire « ball_dict »
@@ -35,5 +28,10 @@ ball_img = None  # À remplacer par l'image chargée et redimensionnée
 # - "score" : score initial (commence à 0)
 
 ball_dict.update({
-    # À compléter
+    "x": SCREEN_WIDTH / 2,
+    "y": SCREEN_HEIGHT / 2,
+    "dx": BALL_SPEED_X,
+    "dy": BALL_SPEED_Y,
+    "lives": LIVES,
+    "score": 0
 })
