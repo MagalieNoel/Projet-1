@@ -8,8 +8,8 @@ from config import PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_Y, SCREEN_WIDTH, paddle_d
 # - L'image se trouve dans assets/paddle.png
 # - Redimensionner avec pygame.transform.scale(image, (PADDLE_WIDTH, PADDLE_HEIGHT))
 # - Stocker le résultat dans la variable « paddle_img »
-
-paddle_img = None  # À remplacer par l'image chargée et redimensionnée
+img = pygame.image.load("assets/paddle.png")
+paddle_img = pygame.transform.scale(img, (PADDLE_WIDTH, PADDLE_HEIGHT))  # À remplacer par l'image chargée et redimensionnée
 
 
 # ======================== PARTIE 1.4 ========================
@@ -22,4 +22,6 @@ paddle_img = None  # À remplacer par l'image chargée et redimensionnée
 
 paddle_dict.update({
     # À compléter
+    "x": SCREEN_WIDTH / 2,
+    "y": PADDLE_Y
 })
