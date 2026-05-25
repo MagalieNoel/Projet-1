@@ -22,6 +22,6 @@ paddle_img = pygame.transform.scale(img, (PADDLE_WIDTH, PADDLE_HEIGHT))  # À re
 
 paddle_dict.update({
     # À compléter
-    "x": SCREEN_WIDTH / 2,
+    "x": (SCREEN_WIDTH / 2) - PADDLE_WIDTH / 2,
     "y": PADDLE_Y
 })
