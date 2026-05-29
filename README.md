@@ -155,7 +155,7 @@ Dans le fichier `ball.py`, chargez l'image de la balle et redimensionnez-la.
 ### 1.2 : Initialisation du dictionnaire `ball_dict`
 
 Toujours dans `ball.py`, initialisez le dictionnaire `ball_dict` qui contient l'état courant de la balle.
-
+ v
 **Clés à initialiser :**
 - `"x"` : position horizontale de départ — balle centrée dans l'écran : `SCREEN_WIDTH // 2`.
 - `"y"` : position verticale de départ — balle centrée dans l'écran : `SCREEN_HEIGHT // 2`.
@@ -216,7 +216,16 @@ Cette fonction doit retourner une **liste de dictionnaires**, un par brique, en 
 ```python
 def generate_bricks():
     return [
-        { ... }
+       {
+    "x"      : BRICK_OFFSET_LEFT + col * (BRICK_WIDTH + BRICK_PADDING),
+    "y"      : BRICK_OFFSET_TOP  + row * (BRICK_HEIGHT + BRICK_PADDING),
+    "width"  : BRICK_WIDTH,
+    "height" : BRICK_HEIGHT,
+    "color"  : BRICK_COLORS[row],
+    "image"  : brick_images[BRICK_COLORS[row]],
+    "active" : True,
+    "points" : BRICK_POINTS[row]
+} for brick_images
         for row in range(BRICK_ROWS)
         for col in range(BRICK_COLS)
     ]
@@ -266,6 +275,8 @@ Complétez `check_floor()`.
 Complétez `move_paddle()`.
 
 La fonction `pygame.key.get_pressed()` retourne l'état de toutes les touches du clavier sous forme d'une liste. On peut tester si une touche est maintenue enfoncée comme ceci :
+
+
 
 ```python
 keys = pygame.key.get_pressed()

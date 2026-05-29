@@ -52,6 +52,7 @@ brick_images = {
 # (double boucle for ... for dans la même expression [ ... ]).
 
 def generate_bricks():
+ # À remplacer par une compréhension de liste
     return [
         {
             "x": BRICK_OFFSET_LEFT + col * (BRICK_WIDTH + BRICK_PADDING),
@@ -64,5 +65,4 @@ def generate_bricks():
             "points": BRICK_POINTS[row]
         }
         for row in range(BRICK_ROWS)
-        for col in range(BRICK_COLS)
-    ]  # À remplacer par une compréhension de liste
+        for col in range(BRICK_COLS)]

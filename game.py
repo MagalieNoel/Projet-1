@@ -17,7 +17,8 @@ from config import (
 # - Ajouter « dy » à la position « y » de la balle
 
 def move_ball():
-    pass  # À compléter
+    ball_dict["x"]+=BALL_SPEED_X
+    ball_dict["y"]+=BALL_SPEED_Y
 
 
 # ======================== PARTIE 3.2 ========================
@@ -31,6 +32,12 @@ def move_ball():
 # Remarque : le sol n'est PAS géré ici (voir check_floor).
 
 def bounce_walls():
+    if ball_dict["x"]<=0:
+        ball_dict["dx"] *= -1
+    if ball_dict["x"]+ BRICK_WIDTH >= SCREEN_WIDTH:
+        ball_dict["dx"]*=-1
+    if ball_dict["y"]<=0:
+        ball_dict["dx"]*=-1
     pass  # À compléter
 
 
@@ -42,9 +49,11 @@ def bounce_walls():
 # Rappel : le bas de la balle = ball_dict["y"] + BALL_SIZE[1]
 
 def check_floor():
-    pass  # À compléter (retourner True ou False)
-
-
+    if ball_dict["y"] + BALL_SIZE[1]>SCREEN_HEIGHT:
+        return True
+    else:
+        return False
+    
 # ======================== PARTIE 3.4 ========================
 # TODO : Déplacer la raquette selon les touches pressées
 # Utiliser pygame.key.get_pressed() pour détecter les touches maintenues.
@@ -59,9 +68,12 @@ def check_floor():
 # Astuce : utilisez la fonction max() et min() pour clamper la valeur.
 
 def move_paddle():
-    pass  # À compléter
-
-
+    keys=pygame.key.get_pressed()
+    if keys[pygame.K_LEFT]:
+        paddle_dict["x"]-=PADDLE_SPEED
+    if keys[pygame.K_RIGHT]:
+        paddle_dict["x"]+=PADDLE_SPEED
+    paddle_dict["x"]= max(0, min(paddle_dict["x"],SCREEN_WIDTH-PADDLE_WIDTH))
 # ======================== PARTIE 4.1 ========================
 # TODO : Détecter la collision entre la balle et la raquette
 # Si la balle touche la raquette, elle doit rebondir vers le haut.
